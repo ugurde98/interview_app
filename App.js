@@ -1,11 +1,7 @@
 import React from "react";
-import { Alert, Button, StyleSheet, Text, View } from "react-native";
-import { useAuth0, Auth0Provider } from "react-native-auth0";
+import {  Auth0Provider } from "react-native-auth0";
 import { Provider as PaperProvider } from 'react-native-paper';
-import { useTheme } from 'react-native-paper';
 import AppNavigator from "./navigation/AppNavigator";
-
-
 
 const App = () => {
   return (
@@ -20,8 +16,5 @@ const App = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  
-});
 
 export default App;
