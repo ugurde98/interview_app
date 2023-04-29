@@ -1,6 +1,9 @@
 import React from "react";
 import { Alert, Button, StyleSheet, Text, View } from "react-native";
 import { useAuth0, Auth0Provider } from "react-native-auth0";
+import { Provider as PaperProvider } from 'react-native-paper';
+import { useTheme } from 'react-native-paper';
+
 
 const Home = () => {
   const { authorize, clearSession, user, error, getCredentials } = useAuth0();
@@ -27,14 +30,17 @@ const Home = () => {
       console.log("Log out cancelled");
     }
   };
+  const theme = useTheme();
+
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}> Auth0Sample - Login </Text>
+      <Text style={{ color: theme.colors.primary }}> Auth0Sample - Login </Text>
       {user && <Text>You are logged in as {user.name}</Text>}
       {!user && <Text>You are not logged in</Text>}
       {error && <Text>{error.message}</Text>}
       <Button
+      
         onPress={loggedIn ? onLogout : onLogin}
         title={loggedIn ? "Log Out" : "Log In"}
       />
@@ -48,7 +54,9 @@ const App = () => {
       domain={"dev-r71rmuv7r1vo37d6.us.auth0.com"}
       clientId={"3M1YSfCUV11jWKvGmncL3Lf0MMh34UL5"}
     >
+    <PaperProvider>
       <Home />
+    </PaperProvider>
     </Auth0Provider>
   );
 };
