@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeScreen from "../screens/HomeScreen";
 import UserScreen from "../screens/UserScreen";
+import ComicDetailsScreen from "../screens/ComicDetailsScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -13,6 +14,7 @@ const HomeStackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="HomeStack" component={HomeScreen}  options={{headerShown:false}}/>
+      <Stack.Screen name="ComicDetails" component={ComicDetailsScreen}  options={{headerShown:false}}/>
     </Stack.Navigator>
   );
 };
