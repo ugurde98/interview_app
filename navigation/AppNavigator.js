@@ -3,11 +3,11 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import HomeScreen from "../screens/HomeScreen";
 import UserScreen from "../screens/UserScreen";
 import ComicDetailsScreen from "../screens/ComicDetailsScreen";
 import MarvelLogo from "../assets/MarvelLogo";
+import { Ionicons } from "@expo/vector-icons";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -41,15 +41,28 @@ const UserStackNavigator = () => {
 };
 const TabNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          if (route.name === "Home") {
+            iconName = focused ? "ios-home-sharp" : "ios-home-outline";
+          } else if (route.name === "Settings") {
+            iconName = focused ? "settings-sharp" : "settings-outline";
+          }
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: "#EC1D24",
+        tabBarInactiveTintColor: "gray",
+      })}
+    >
       <Tab.Screen
         name="Home"
         component={HomeStackNavigator}
         options={{
           headerTitle: () => <MarvelLogo />,
-          headerStyle:{
-            backgroundColor:"#EC1D24",
-          }
+          headerStyle: {
+            backgroundColor: "#EC1D24",
+          },
         }}
       />
       <Tab.Screen
@@ -57,9 +70,9 @@ const TabNavigator = () => {
         component={UserStackNavigator}
         options={{
           headerTitle: () => <MarvelLogo />,
-          headerStyle:{
-            backgroundColor:"#EC1D24",
-          }
+          headerStyle: {
+            backgroundColor: "#EC1D24",
+          },
         }}
       />
     </Tab.Navigator>
