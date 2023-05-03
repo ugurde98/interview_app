@@ -11,7 +11,7 @@ const ComicsCard = ({item}) => {
     <TouchableOpacity onPress={()=>navigation.navigate("ComicDetails",{itemId:item.item.id})}>
 
     <Card style={styles.card}>
-    <Card.Cover source={{ uri: item.item.thumbnail.path+"."+item.item.thumbnail.extension }} />
+    <Card.Cover resizeMode='stretch' source={{ uri: item.item.thumbnail.path+"."+item.item.thumbnail.extension }} />
     <Card.Content>
       <Text numberOfLines={2} variant="titleLarge">{item.item.title} </Text>
       <Text numberOfLines={3} variant="bodyMedium">{item.item.description ?item.item.description :"Description Not Found"}</Text>
