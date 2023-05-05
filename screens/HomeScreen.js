@@ -12,7 +12,7 @@ const HomeScreen = () => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `${apiConfig.apiUrl}v1/public/comics?apikey=${apiConfig.apiKey}&hash=${apiConfig.hash}&ts=${apiConfig.ts}&limit=10`,
+      url: `${apiConfig.apiUrl}v1/public/comics?apikey=${apiConfig.apiKey}&hash=${apiConfig.hash}&ts=${apiConfig.ts}&limit=30`,
       headers: {},
     };
     axios
