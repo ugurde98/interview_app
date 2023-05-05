@@ -2,6 +2,7 @@ import React from "react";
 import {  Auth0Provider } from "react-native-auth0";
 import { Provider as PaperProvider } from 'react-native-paper';
 import AppNavigator from "./navigation/AppNavigator";
+import { StatusBar } from "expo-status-bar";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
     >
     <PaperProvider>
       <AppNavigator/>
+      <StatusBar style="light"/>
     </PaperProvider>
     </Auth0Provider>
   );
