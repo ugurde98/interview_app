@@ -153,6 +153,9 @@ const ComicDetailsScreen = (props) => {
               {item.name}
             </Text>
           ))}
+          <View>
+            <Text>a</Text>
+          </View>
         </View>
       </ScrollView>
     );
