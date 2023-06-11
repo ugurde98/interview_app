@@ -154,7 +154,7 @@ const ComicDetailsScreen = (props) => {
             </Text>
           ))}
           <View>
-            <Text>a</Text>
+            <Text>ab</Text>
           </View>
         </View>
       </ScrollView>
